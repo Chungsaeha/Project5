@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	data-layout-decorate="~{samples/layout/sampleLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<title>홈화면</title>
+<link rel="stylesheet" href="css/home.css" type="text/css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<span th:text="${userId}" style="font-weight: bolder;"></span>님 환영합니다.
+			<button id="logoutSubmit" class="button">로그아웃</button>
+		</div>
+
+		<div class="row" id="section1">
+			<h2>인기 키워드 목록</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">순위</th>
+						<th scope="col">키워드</th>
+						<th scope="col">검색횟수</th>
+					</tr>
+				</thead>
+				<tbody id="famousSearchList">
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row">
+			<h2>내 검색 히스토리</h2>
+			<div style="height: 250px; overflow-y: auto;">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">최신순</th>
+							<th scope="col">키워드</th>
+							<th scope="col">검색일시</th>
+						</tr>
+					</thead>
+					<tbody id="mySearchList">
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<h2>장소검색 , 검색된 장소의 상세조회</h2>
+			<div class="map_wrap">
+				<div id="map"
+					style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+
+				<div id="menu_wrap" class="bg_white">
+					<div class="option">
+						<div>
+							<form onsubmit="searchPlaces(); return false;">
+								키워드 : <input type="text" value="" id="keyword" size="15">
+								<button type="submit">검색하기</button>
+							</form>
+						</div>
+					</div>
+					<hr>
+					<ul id="placesList"></ul>
+					<div id="pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9ad4d4c870554ae8960b91f6be6ccc10&libraries=services"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="js/home.js"></script>
+</body>
+</html>

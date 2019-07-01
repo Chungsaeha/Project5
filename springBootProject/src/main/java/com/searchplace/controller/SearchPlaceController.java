@@ -40,6 +40,14 @@ public class SearchPlaceController {
 	@Autowired 
 	private SearchInfoService searchInfoService;
 		
+	/*
+	 * 	기본 페이지.
+	 */
+	@RequestMapping("/")
+	public ModelAndView Redirect() throws Exception {
+		
+		return new ModelAndView("redirect:/login");
+	}
 	
 	/*
 	 * 	로그인 페이지.

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	data-layout-decorate="~{samples/layout/sampleLayout}">
+<head>
+	<title>오류화면</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>오류화면</h2>
+		<div class="row well">
+			에러코드 : <span th:text="${code}" style="font-weight: bolder;"></span>
+		</div>
+		
+		<div class="row well">
+			에러메시지 : <span th:text="${msg}" style="font-weight: bolder;"></span>
+		</div>
+		
+		<div class="row well">
+			에러발생시간 : <span th:text="${timestamp}" style="font-weight: bolder;"></span>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,5 +1,66 @@
 @charset "utf-8";
 
+.overlay_wrap {
+	position: absolute;
+	left: 0;
+	bottom: 40px;
+	width: 220px;
+	height: 80px;
+	margin-left: -144px;
+	text-align: left;
+	overflow: hidden;
+	font-size: 9px;
+	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+	line-height: 1.5;
+}
+
+.overlay_wrap * {
+	padding: 0;
+	margin: 0;
+}
+
+.overlay_wrap .overlay_info {
+	width: 286px;
+	height: 120px;
+	border-radius: 5px;
+	border-bottom: 2px solid #ccc;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+	background: #fff;
+}
+
+.overlay_wrap .overlay_info:nth-child(1) {
+	border: 0;
+	box-shadow: 0px 1px 2px #888;
+}
+
+.overlay_info .title {
+	padding: 5px 0 0 10px;
+	height: 30px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.overlay_info .body {
+	position: relative;
+	overflow: hidden;
+}
+
+.overlay_info .overlay_desc {
+	position: relative;
+	margin: 13px 0 0 10px;
+	height: 30px;
+	font-weight: bolder;
+}
+
+.overlay_desc .ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 .map_wrap, .map_wrap * {
 	margin: 0;
 	padding: 0;
@@ -176,12 +237,14 @@
 }
 
 #pagination a {
+	color: gray;
 	display: inline-block;
+	font-weight: normal;
 	margin-right: 10px;
 }
 
 #pagination .on {
-	font-weight: bold;
+	font-weight: bolder;
 	cursor: default;
 	color: #777;
 }

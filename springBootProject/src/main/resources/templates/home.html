@@ -12,45 +12,15 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
-			<span th:text="${userId}" style="font-weight: bolder;"></span>님 환영합니다.
+		<h2 style="text-align: center;">장소검색 서비스</h2><br><br>
+		
+		<div class="row" style="text-align: right;">
+			<div><span th:text="${userId}" style="font-weight: bolder;"></span>님 환영합니다.</div><br>
 			<button id="logoutSubmit" class="button">로그아웃</button>
 		</div>
-
-		<div class="row" id="section1">
-			<h2>인기 키워드 목록</h2>
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">순위</th>
-						<th scope="col">키워드</th>
-						<th scope="col">검색횟수</th>
-					</tr>
-				</thead>
-				<tbody id="famousSearchList">
-				</tbody>
-			</table>
-		</div>
-
+		
 		<div class="row">
-			<h2>내 검색 히스토리</h2>
-			<div style="height: 250px; overflow-y: auto;">
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">최신순</th>
-							<th scope="col">키워드</th>
-							<th scope="col">검색일시</th>
-						</tr>
-					</thead>
-					<tbody id="mySearchList">
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="row">
-			<h2>장소검색 , 검색된 장소의 상세조회</h2>
+			<h3>장소검색 , 검색된 장소의 상세조회</h3>
 			<div class="map_wrap">
 				<div id="map"
 					style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
@@ -68,6 +38,38 @@
 					<ul id="placesList"></ul>
 					<div id="pagination"></div>
 				</div>
+			</div>
+		</div><br><br>
+
+		<div class="row" id="section1">
+			<h3>인기 키워드 목록</h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">순위</th>
+						<th scope="col">키워드</th>
+						<th scope="col">검색횟수</th>
+					</tr>
+				</thead>
+				<tbody id="famousSearchList">
+				</tbody>
+			</table>
+		</div><br><br>
+
+		<div class="row">
+			<h3>나의 검색 히스토리</h3>
+			<div style="height: 250px; overflow-y: auto;">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">최신순</th>
+							<th scope="col">키워드</th>
+							<th scope="col">검색일시</th>
+						</tr>
+					</thead>
+					<tbody id="mySearchList">
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

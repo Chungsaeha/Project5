@@ -68,7 +68,7 @@ $(function() {
 				}
 			}
 		});
-	});
+	});	
 });
 
 //커스텀오버레이를 담을 배열.
@@ -155,7 +155,7 @@ function placesSearchCB(data, status, pagination) {
 	}
 }
 
-//검색 결과 목록과 마커를 표출하는 함수입니다
+//검색 결과 목록과 커스텀오버레이를 표출하는 함수입니다
 function displayPlaces(places) {
 
 	var listEl = document.getElementById('placesList'), menuEl = document
@@ -165,7 +165,7 @@ function displayPlaces(places) {
 	// 검색 결과 목록에 추가된 항목들을 제거합니다
 	removeAllChildNods(listEl);
 
-	// 지도에 표시되고 있는 마커를 제거합니다
+	// 지도에 표시되고 있는 커스텀오버레이를 제거합니다
 	removeCustomOverlay();
 
 	for (var i = 0; i < places.length; i++) {
@@ -206,7 +206,7 @@ function getListItem(index, places) {
 
 	itemStr += ' <span class="tel">' + places.phone + '</span>';
 
-	itemStr += '<a href=https://map.kakao.com/link/map/' + places.id + ' target="_blank">지도바로가기</a></div>';
+	itemStr += '<a class="gomap" href=https://map.kakao.com/link/map/' + places.id + ' target="_blank">지도바로가기</a></div>';
 
 	el.innerHTML = itemStr;
 	el.className = 'item';
@@ -214,7 +214,7 @@ function getListItem(index, places) {
 	return el;
 }
 
-//마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+//커스텀오버레이를 생성하고 지도 위에 커스텀오버레이를 표시하는 함수입니다
 function addCustomOverlay(position, place) {
 	
 	
@@ -231,20 +231,18 @@ function addCustomOverlay(position, place) {
     '    </div>' +    
     '</div>';
 	
-	//var content = '<div >' + place.place_name + '</div><div>' + place.address_name + '</div>';
-	
 	var customOverlay = new kakao.maps.CustomOverlay({
 	    position: position,
 	    content: content
 	});
 
 	customOverlay.setMap(map);
-	customOverlays.push(customOverlay); // 배열에 생성된 마커를 추가합니다
+	customOverlays.push(customOverlay); // 배열에 생성된 커스텀오버레이를 추가합니다
 
 	return customOverlay;
 }
 
-//지도 위에 표시되고 있는 마커를 모두 제거합니다
+//지도 위에 표시되고 있는 커스텀오버레이를 모두 제거합니다
 function removeCustomOverlay() {
 	for (var i = 0; i < customOverlays.length; i++) {
 		customOverlays[i].setMap(null);
